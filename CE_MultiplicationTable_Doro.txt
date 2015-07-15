@@ -1,0 +1,41 @@
+mutiplication table
+
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+    
+
+	static void Main(string[] args)
+    
+	{
+         
+		//System.Console.WriteLine("Multiplication Table :");
+            
+
+		for (int Num = 1; Num <= 12; Num++)
+            
+		{
+                          
+			for (int multiplyBy = 1; multiplyBy <= 12; multiplyBy++)
+           
+			{
+                    
+
+				System.Console.Write("{0,4}", Num * multiplyBy);
+                
+			}
+
+
+            	}
+ 
+   	}
+
+}
