@@ -1,0 +1,71 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+    
+	static void Main(string[] args)
+    
+	{
+        
+
+		int age;
+        
+		
+		using (StreamReader reader = File.OpenText(args[0]))
+        
+		while (!reader.EndOfStream)
+        
+		{
+            
+			string line = reader.ReadLine();
+            
+		
+			if (null == line)
+                
+			continue;
+           
+           
+
+			age = int.Parse(line);
+           
+           
+	
+			if (age <= 2) { System.Console.WriteLine("Still in Mama's Arms"); }
+           
+
+			else if (age >= 3 && age <= 4) { System.Console.WriteLine("Preschool Maniac"); }
+           
+
+			else if (age >= 5 && age <= 11) { System.Console.WriteLine("Elementary School"); }
+           
+
+			else if (age >= 12 && age <= 14) { System.Console.WriteLine("Middle School"); }
+           
+
+			else if (age >= 15 && age <= 18) { System.Console.WriteLine("High School"); }
+           
+
+			else if (age >= 19 && age <= 22) { System.Console.WriteLine("College"); }
+           
+
+			else if (age >= 23 && age <= 65) { System.Console.WriteLine("Working for the man"); }
+           
+
+			else if (age >= 66 && age <= 100) { System.Console.WriteLine("The Golden Years): }
+           
+
+			else if (age < 0 || age > 100) { System.Console.WriteLine("This program is for humans"); }
+   
+     
+		}
+    
+	}
+
+}

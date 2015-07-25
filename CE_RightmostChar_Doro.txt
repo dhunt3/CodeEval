@@ -1,0 +1,45 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+
+{
+    
+
+	static void Main(string[] args)
+    
+
+	{
+        
+
+		using (StreamReader reader = File.OpenText(args[0]))
+        
+		while (!reader.EndOfStream)
+        
+
+		{
+            
+
+			string line = reader.ReadLine();
+            
+			if (null == line)
+                
+			continue;
+ 
+
+	    		int lineLength = line.Length - 1;
+            		char letter = line[lineLength];
+            		string newLine = line.Substring(0, lineLength-1);
+            		int numPosition = newLine.LastIndexOf(letter);
+            
+            		Console.WriteLine(numPosition);
+            
+            	}
+	}
+}

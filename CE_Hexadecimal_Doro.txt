@@ -1,0 +1,43 @@
+//string hexString = "9f";
+//decimal num = Int32.Parse(hexString, System.Globalization.NumberStyles.HexNumber);
+//Console.WriteLine(num);
+
+
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        using (StreamReader reader = File.OpenText(args[0]))
+
+        while (!reader.EndOfStream)
+
+        {
+
+            string line = reader.ReadLine();
+
+            if (null == line)
+
+                continue;
+
+
+            
+            decimal num = Int32.Parse(hexString, System.Globalization.NumberStyles.HexNumber);
+            			Console.WriteLine(num);
+
+        }
+
+    }
+
+}

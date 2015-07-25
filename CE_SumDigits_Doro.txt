@@ -1,0 +1,71 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+
+{
+    
+
+	static void Main(string[] args)
+    
+
+	{
+        
+
+		using (StreamReader reader = File.OpenText(args[0]))
+        
+		while (!reader.EndOfStream)
+        
+
+		{
+            
+
+			string line = reader.ReadLine();
+            
+			if (null == line)
+                
+			continue;
+            
+            
+
+			char[] arrayLine = line.ToCharArray();
+            
+			int num;
+            
+			string item;
+            
+			int sum = 0;
+
+            
+
+			for (int index = 0; index < arrayLine.Length; index++)
+            
+		
+			{
+
+                
+
+				item = Convert.ToString(arrayLine[index]);
+                
+				num = int.Parse(item);
+                
+				sum = sum + num;
+
+            
+
+			}
+            
+
+			Console.WriteLine(sum);
+        
+		}
+    
+	}
+
+}

@@ -1,0 +1,54 @@
+using System;
+using System.IO;
+
+using System.Collections.Generic;
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        using (StreamReader reader = File.OpenText(args[0]))
+
+        while (!reader.EndOfStream)
+
+        {
+
+            string line = reader.ReadLine();
+
+            if (null == line)
+
+                continue;
+
+
+		char[] arrayLine = line.ToCharArray();
+		if (arrayLine.Length >= 1)
+    		{
+        		if (char.IsLower(arrayLine[0]))
+        		{
+        			arrayLine[0] = char.ToUpper(arrayLine[0]);
+        		}
+    		}
+	    
+			for (int i = 1; i < arrayLine.Length; i++)
+    			{
+        			if (arrayLine[i - 1] == ' ')
+        			{
+        				if (char.IsLower(arrayLine[i]))
+        				{
+            					arrayLine[i] = char.ToUpper(arrayLine[i]);
+        				}
+        			}
+    			}
+		
+		string newLine = new string(arrayLine);
+		Console.WriteLine(newLine);
+
+    	}
+
+    }
+}
+
