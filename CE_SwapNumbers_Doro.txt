@@ -1,0 +1,70 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        using (StreamReader reader = File.OpenText(args[0]))
+
+        while (!reader.EndOfStream)
+
+        {
+
+            string line = reader.ReadLine();
+
+            if (null == line)
+
+                continue;
+
+
+            string[] array = line.Split();
+
+            string word = "";
+
+
+            foreach (string item in array)
+
+            {
+
+                char[] chArray = item.ToCharArray();
+
+                char num1 = chArray[0];
+
+                char num2 = chArray[chArray.Length - 1];
+
+                word += num2.ToString();
+
+
+
+                for (int letter = 1; letter < chArray.Length - 1; letter++)
+
+                {
+
+                    word += chArray[letter].ToString();
+
+                }
+
+
+
+                word += num1.ToString() + " ";
+
+            }
+
+
+            Console.WriteLine(word);
+
+        }
+
+    }
+
+}

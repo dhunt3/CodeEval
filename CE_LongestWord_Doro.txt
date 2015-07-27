@@ -1,0 +1,74 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        using (StreamReader reader = File.OpenText(args[0]))
+
+        while (!reader.EndOfStream)
+
+        {
+
+            string line = reader.ReadLine();
+
+            if (null == line)
+
+                continue;
+
+
+            string[] array = line.Split();
+
+            string maxWord = "";
+
+            string CurrentWord = "";
+
+
+
+            for (int item = 0; item < array.Length; item++)
+
+            {
+
+                CurrentWord = array[item];
+
+
+    
+            if (CurrentWord.Length > maxWord.Length)
+
+                {
+
+                    maxWord = CurrentWord;
+
+                }
+
+                    
+    
+		if (CurrentWord.Length == maxWord.Length)
+
+                {
+
+                    maxWord = maxWord;
+
+                }
+
+            }
+
+
+        
+Console.WriteLine(maxWord);
+
+        }
+
+    }
+
+}

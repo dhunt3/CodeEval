@@ -1,0 +1,94 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        using (StreamReader reader = File.OpenText(args[0]))
+
+        while (!reader.EndOfStream)
+
+        {
+
+            string line = reader.ReadLine();
+
+            if (null == line)
+
+                continue;
+
+
+    
+        string[] array = line.Split(',');
+
+            int decNum = Convert.ToInt32(array[0]);
+
+            
+	    string dec = Convert.ToString(decNum, 2);
+
+
+            
+int p1 = Convert.ToInt32(array[1]);
+
+            int p2 = Convert.ToInt32(array[2]);
+
+            
+	    char[] binArray = dec.ToCharArray();
+
+            Array.Reverse(binArray);
+
+            
+	    int newPos1 = 0;
+
+            int newPos2 = 0;
+
+            
+
+	    for (int counter = 0; counter < binArray.Length; counter++)
+
+            {
+
+                int numPosition1 = p1 - 1;
+
+                int numPosition2 = p2 - 1;
+
+                
+         
+	        newPos1 = Convert.ToInt32(binArray[numPosition1]);
+
+                newPos2 = Convert.ToInt32(binArray[numPosition2]);
+
+            }
+
+
+            if (newPos1 == newPos2)
+
+            {
+
+                Console.WriteLine("true");
+
+            }
+
+
+            else
+
+            {
+
+                Console.WriteLine("false");
+
+            }
+
+        }
+
+    }
+
+}
