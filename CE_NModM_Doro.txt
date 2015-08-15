@@ -1,0 +1,47 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        using (StreamReader reader = File.OpenText(args[0]))
+
+        while (!reader.EndOfStream)
+
+        {
+
+            string line = reader.ReadLine();
+
+            if (null == line)
+
+            continue;
+
+            
+    
+	    string[] array = line.Split(',');
+
+            int num1 = int.Parse(array[0]);
+
+            int num2 = int.Parse(array[1]);
+
+            int quotient = num1/num2;
+
+            int answer = num1 - (quotient * num2);
+ 
+            Console.WriteLine(answer);
+
+        }
+
+    }
+
+}
