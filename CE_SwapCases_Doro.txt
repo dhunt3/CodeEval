@@ -1,0 +1,70 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        using (StreamReader reader = File.OpenText(args[0]))
+
+        while (!reader.EndOfStream)
+
+        {
+
+            string line = reader.ReadLine();
+
+            if (null == line)
+
+                continue;
+
+             
+                char[] array = line.ToCharArray();
+
+                string newLine = "";
+
+            
+            
+		foreach (char item in array)
+
+                {
+
+
+	            if(Char.IsUpper(item) == true)
+
+                    {
+
+                        newLine += char.ToLower(item);
+
+                    }
+
+                
+
+                    else
+
+                    {
+
+                        newLine += char.ToUpper(item);
+
+                    }
+
+    
+            }
+
+
+    
+            Console.WriteLine(newLine);
+
+        }
+
+    }
+
+}

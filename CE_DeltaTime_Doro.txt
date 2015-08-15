@@ -1,0 +1,50 @@
+using System;
+
+using System.IO;
+
+using System.Collections.Generic;
+
+
+
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        using (StreamReader reader = File.OpenText(args[0]))
+
+        while (!reader.EndOfStream)
+
+        {
+
+            string line = reader.ReadLine();
+
+            if (null == line)
+
+            continue;
+
+            
+         
+   
+         string[] array = line.Split();
+
+            DateTime time = DateTime.Parse(array[0]);
+
+            DateTime time2 = DateTime.Parse(array[1]);
+
+
+            TimeSpan span = time.Subtract(time2);
+
+            TimeSpan newSpan = span.Duration();
+
+
+            Console.WriteLine(newSpan);
+
+        }
+
+    }
+
+}
